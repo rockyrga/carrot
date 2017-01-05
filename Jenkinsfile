@@ -2,6 +2,12 @@
 
 node {
 
+    properties([
+        pipelineTriggers([
+          [$class: "GitHubPushTrigger"]
+        ])
+    ])
+
     stage('Checkout') {
         checkout scm
     }
